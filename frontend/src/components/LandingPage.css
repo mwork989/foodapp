@@ -1,0 +1,42 @@
+.banner-class {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin: 0 auto;
+  height: 480px;
+  background: url('../../public/assets/banner2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  opacity: 0.8;
+}
+
+h1{
+   
+
+color: #FFFFFF;
+
+}
+
+.banner-logo{
+    margin:30px auto;
+    width: 147px;
+    height: 147px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #707070;
+    opacity: 1;
+}
+
+.banner-logo-text{
+    top: 105px;
+left: 649px;
+width: 68px;
+height: 99px;
+text-align: left;
+font-size: 80px;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+letter-spacing: 0px;
+color: #EB2929;
+opacity: 1;
+}

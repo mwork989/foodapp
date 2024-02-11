@@ -1,22 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
+// src/components/RestaurantList.js
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Row, Col, Card, Button } from 'react-bootstrap';
-import { useEffect } from "react";
-import { fetchRestaurants } from "../store/restaurantSlice";
-
 
 const RestaurantList = () => {
-    const { entities: restaurants, loading } = useSelector(state => state.restaurants);
-    const dispatch = useDispatch();
+  const restaurants = useSelector(state => state.restaurants.entities);
 
-    useEffect(()=>{
-        if (loading === 'idle') {
-            dispatch(fetchRestaurants());
-          }
-    },[loading,dispatch])
-
-    return ( 
-        <>
-            <Row>
+  return (
+    <Row>
       {restaurants.map(restaurant => (
         <Col key={restaurant._id} md={4} lg={3} className="mb-4">
           <Card>
@@ -26,13 +18,15 @@ const RestaurantList = () => {
               <Card.Text>
                 {restaurant.location} - {restaurant.cuisine.join(', ')}
               </Card.Text>
+              <Link to={`/restaurants/${restaurant._id}`}>
+                <Button variant="primary">View Details</Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
       ))}
     </Row>
-        </>
-     );
-}
- 
+  );
+};
+
 export default RestaurantList;
